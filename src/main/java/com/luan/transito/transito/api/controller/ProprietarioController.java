@@ -20,9 +20,14 @@ public class ProprietarioController {
     private final ProprietarioRepository proprietarioRepository;
 
     @GetMapping("/proprietarios")
-        public List<Proprietario> listar() {
-            return proprietarioRepository.findAll();
-        }
+    public List<Proprietario> listar() {
+        return proprietarioRepository.findAll();
+    }
 
+    @GetMapping("/proprietarios")
+        public List<Proprietario> listarEspecifico() {
+           return proprietarioRepository.findByNome("Luan Costa");
+            //return proprietarioRepository.findAll();
+        }
 
 }
